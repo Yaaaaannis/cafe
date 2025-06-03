@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+
+/* Display variants */
+@font-face {
+  font-family: 'DinaChaumont';
+  src: url('/fonts/DinaChaumont-DisplayRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont';
+  src: url('/fonts/DinaChaumont-DisplayLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont';
+  src: url('/fonts/DinaChaumont-DisplayExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont';
+  src: url('/fonts/DinaChaumont-DisplayBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont';
+  src: url('/fonts/DinaChaumont-DisplayExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont';
+  src: url('/fonts/DinaChaumont-DisplayBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Text variants */
+@font-face {
+  font-family: 'DinaChaumont Text';
+  src: url('/fonts/DinaChaumont-TextRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont Text';
+  src: url('/fonts/DinaChaumont-TextItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont Text';
+  src: url('/fonts/DinaChaumont-TextBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont Text';
+  src: url('/fonts/DinaChaumont-TextBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont Text';
+  src: url('/fonts/DinaChaumont-TextExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DinaChaumont Text';
+  src: url('/fonts/DinaChaumont-TextExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    font-family: 'DinaChaumont', system-ui, sans-serif;
+  }
+}
