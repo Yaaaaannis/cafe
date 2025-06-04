@@ -1,10 +1,11 @@
 import logo from './assets/logo.svg';
+import { Link } from 'react-router-dom';
 
 const navItems = [
-  { label: 'Where' },
-  { label: 'What' },
-  { label: 'Wear' },
-  { label: 'Who' },
+  { label: 'Where', to: '/' },
+  { label: 'What', to: '/what' },
+  { label: 'Wear', to: '/' },
+  { label: 'Who', to: '/' },
 ];
 
 export default function Header() {
@@ -12,18 +13,19 @@ export default function Header() {
     <header className="w-full bg-[#6C584D] flex items-center justify-between px-4 py-2 border-t-2 border-[#FFFFEF]">
       {/* Logo */}
       <div className="h-[56px] w-[180px] flex items-center pl-6">
-        <img src={logo} alt="pure coffee" className="h-[48px] ml-2 hover:cursor-pointer scale-140" />
+        <img src={logo} alt="pure coffee" className="h-[48px] ml-2 hover:cursor-pointer scale-140 " />
       </div>
       {/* Nav */}
-      <nav className="flex gap-4 flex-1 justify-center py-4">
+      <nav className="flex gap-4 flex-1 justify-center mr-36 py-4">
         {navItems.map((item) => (
-          <button
+          <Link
             key={item.label}
-            className="font-bold text-[40px] font-DinaChaumont text-[#FFFFEF] border-2 border-[#FFFFEF] px-10 py-0 bg-transparent hover:bg-[#7e6a5c] hover:cursor-pointer transition rounded-none shadow-none focus:outline-none"
-            style={{ boxShadow: '0 0 0 2px #FFFFEF, 2px 2px 0 0 #6C584D' }}
+            to={item.to}
+            className="font-bold text-[40px] font-DinaChaumont text-[#FFFFEF] border-2 border-[#FFFFEF] px-8 py-0 bg-transparent hover:bg-[#7e6a5c] hover:cursor-pointer transition rounded-none shadow-none focus:outline-none"
+            style={{ boxShadow: '0 0 0 2px #FFFFEF, 2px 2px 0 0 #6C584D', textDecoration: 'none' }}
           >
             {item.label}
-          </button>
+          </Link>
         ))}
       </nav>
       {/* Icons */}
