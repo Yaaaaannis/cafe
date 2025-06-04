@@ -1,5 +1,7 @@
 import logo from './assets/logo.svg';
 import { Link } from 'react-router-dom';
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
 const navItems = [
   { label: 'Where', to: '/' },
@@ -9,6 +11,54 @@ const navItems = [
 ];
 
 export default function Header() {
+  const navRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  useEffect(() => {
+    navRefs.current.forEach((ref) => {
+      if (ref) {
+        // Animation au survol
+        ref.addEventListener('mouseenter', () => {
+          const tl = gsap.timeline();
+          tl.to(ref, {
+            fontWeight: 500,
+            duration: 0.2,
+            ease: "ease-in-out",
+          })
+          .to(ref, {
+            fontWeight: 600,
+            duration: 0.2,
+            ease: "ease-in-out",
+          })
+          .to(ref, {
+            fontWeight: 700,
+            duration: 0.2,
+            ease: "ease-in-out",
+          });
+        });
+
+        // Animation au départ de la souris
+        ref.addEventListener('mouseleave', () => {
+          const tl = gsap.timeline();
+          tl.to(ref, {
+            fontWeight: 600,
+            duration: 0.1,
+            ease: "ease-out",
+          })
+          .to(ref, {
+            fontWeight: 500,
+            duration: 0.1,
+            ease: "ease-out",
+          })
+          .to(ref, {
+            fontWeight: 400,
+            duration: 0.1,
+            ease: "ease-out",
+          });
+        });
+      }
+    });
+  }, []);
+
   return (
     <header className="w-full bg-[#6C584D] flex items-center justify-between px-4 py-2 border-t-2 border-[#FFFFEF]">
       {/* Logo */}
@@ -17,11 +67,14 @@ export default function Header() {
       </div>
       {/* Nav */}
       <nav className="flex gap-4 flex-1 justify-center mr-36 py-4">
-        {navItems.map((item) => (
+        {navItems.map((item, index) => (
           <Link
             key={item.label}
+            ref={(el) => {
+              navRefs.current[index] = el;
+            }}
             to={item.to}
-            className="font-bold text-[40px] font-DinaChaumont text-[#FFFFEF] border-2 border-[#FFFFEF] px-8 py-0 bg-transparent hover:bg-[#7e6a5c] hover:cursor-pointer transition rounded-none shadow-none focus:outline-none"
+            className="font-normal text-[40px] font-DinaChaumont text-[#FFFFEF] border-2 border-[#FFFFEF] px-8 py-0 bg-transparent hover:bg-[#7e6a5c] hover:cursor-pointer transition rounded-none shadow-none focus:outline-none"
             style={{ boxShadow: '0 0 0 2px #FFFFEF, 2px 2px 0 0 #6C584D', textDecoration: 'none' }}
           >
             {item.label}

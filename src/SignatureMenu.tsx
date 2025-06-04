@@ -1,17 +1,47 @@
 import glass from '/glass.svg';
 import coffee from '/coffee.svg';
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
 export default function SignatureMenu() {
+  const glassRef = useRef(null);
+  const coffeeRef = useRef(null);
+
+  useEffect(() => {
+    // Animation du verre avec une rotation légère
+    gsap.to(glassRef.current, {
+      y: -15,
+      rotation: -5,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: 'ease-in-out'
+    });
+
+    // Animation de la tasse de café avec un délai et un mouvement différent
+    gsap.to(coffeeRef.current, {
+      y: -25,
+      rotation: -1,
+      duration: 2.5,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      delay: 0.5
+    });
+  }, []);
+
   return (
     <div className="w-full h-full flex bg-[#FFFFEF] ">
       {/* Left: Glass image + Coffee image */}
       <div className="w-1/2 h-full flex flex-col items-start justify-start">
         <img
+          ref={glassRef}
           src={glass}
           alt="glass"
-          className="h-[1020x] w-[595.44px] z-10 "
+          className="h-[1020x] w-[595.44px] z-10"
         />
         <img
+          ref={coffeeRef}
           src={coffee}
           alt="coffee"
           className="h-[auto] w-auto z-10 ml-[400px] -mt-[100px]"

@@ -1,17 +1,47 @@
 import brownie from '/brownie.svg';
 import cookie from '/cookie.svg';
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
 export default function ArtisanalMenu() {
+  const brownieRef = useRef(null);
+  const cookieRef = useRef(null);
+
+  useEffect(() => {
+    // Animation du brownie avec un léger effet de flottement et rotation
+    gsap.to(brownieRef.current, {
+      y: -20,
+      rotation: -3,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+
+    // Animation du cookie avec un mouvement plus lent et une rotation inverse
+    gsap.to(cookieRef.current, {
+      y: -15,
+      rotation: 2,
+      duration: 2.5,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut',
+      delay: 0.8 // Décalage pour créer un effet asynchrone
+    });
+  }, []);
+
   return (
     <div className="w-full h-full flex bg-[#FFFFEF]">
       {/* Left: Brownie image */}
       <div className="w-1/2 h-full flex flex-col items-center justify-center ">
         <img
+          ref={brownieRef}
           src={brownie}
           alt="brownie"
           className="h-[full] w-auto object-contain ml-[50vh]"
         />
         <img
+          ref={cookieRef}
           src={cookie}
           alt="cookie"
           className="h-[full] w-auto object-contain mt-8"
