@@ -4,7 +4,8 @@ import Opening from './Opening'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import What from './What'
 import SignatureMenu from './SignatureMenu'
-
+import MatchaMenu from './MatchaMenu'
+import ArtisanalMenu from './ArtisanalMenu'
 function App() {
   return (
     <Router>
@@ -15,6 +16,8 @@ function App() {
           <>
             <What />
             <SignatureMenu />
+            <MatchaMenu />
+            <ArtisanalMenu />
           </>
         } />
       </Routes>
