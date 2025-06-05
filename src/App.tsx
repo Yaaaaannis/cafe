@@ -7,6 +7,8 @@ import SignatureMenu from './SignatureMenu'
 import MatchaMenu from './MatchaMenu'
 import ArtisanalMenu from './ArtisanalMenu'
 import Merch from './Merch'
+import DuoImages from './DuoImages'
+
 function App() {
   return (
     <Router>
@@ -21,7 +23,12 @@ function App() {
             <ArtisanalMenu />
           </>
         } />
-        <Route path="/merch" element={<Merch />} />
+        <Route path="/merch" element={
+          <>
+            <Merch />
+            <DuoImages />
+          </>
+        } />
       </Routes>
     </Router>
   )
