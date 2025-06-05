@@ -6,6 +6,7 @@ import What from './What'
 import SignatureMenu from './SignatureMenu'
 import MatchaMenu from './MatchaMenu'
 import ArtisanalMenu from './ArtisanalMenu'
+import Merch from './Merch'
 function App() {
   return (
     <Router>
@@ -20,6 +21,7 @@ function App() {
             <ArtisanalMenu />
           </>
         } />
+        <Route path="/merch" element={<Merch />} />
       </Routes>
     </Router>
   )

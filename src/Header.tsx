@@ -6,7 +6,7 @@ import gsap from 'gsap';
 const navItems = [
   { label: 'Where', to: '/' },
   { label: 'What', to: '/what' },
-  { label: 'Wear', to: '/' },
+  { label: 'Wear', to: '/merch' },
   { label: 'Who', to: '/' },
 ];
 
