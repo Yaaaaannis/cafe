@@ -2,7 +2,7 @@ export default function What() {
   return (
     <div className="w-full h-screen flex bg-[#FFFFEF] overflow-hidden">
       {/* Left: Coffee machine image */}
-      <div className="w-1/2 h-full relative ">
+      <div className="w-1/2 h-full relative overflow-hidden">
         <img
           src="/pic2.png"
           alt="coffee machine background"
@@ -11,7 +11,7 @@ export default function What() {
         />
       </div>
       {/* Right: Text content */}
-      <div className="w-1/2 h-full bg-[#FFFFEF] flex flex-col pt-12 items-end px-12 relative">
+      <div className="w-1/2 h-full bg-[#FFFFEF] flex flex-col pt-12 items-end px-12 relative overflow-hidden">
         <div className="w-full flex flex-col items-end">
           {/* Bloc titre positionné comme sur Figma */}
           <div 

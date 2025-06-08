@@ -8,6 +8,8 @@ import MatchaMenu from './MatchaMenu'
 import ArtisanalMenu from './ArtisanalMenu'
 import Merch from './Merch'
 import DuoImages from './DuoImages'
+import MerchShowcase from './MerchShowcase'
+import WhatVideo from './WhatVideo'
 
 function App() {
   return (
@@ -27,8 +29,10 @@ function App() {
           <>
             <Merch />
             <DuoImages />
+            <MerchShowcase />
           </>
         } />
+        <Route path="/who" element={<WhatVideo />} />
       </Routes>
     </Router>
   )

@@ -7,7 +7,7 @@ const navItems = [
   { label: 'Where', to: '/' },
   { label: 'What', to: '/what' },
   { label: 'Wear', to: '/merch' },
-  { label: 'Who', to: '/' },
+  { label: 'Who', to: '/who' },
 ];
 
 export default function Header() {
