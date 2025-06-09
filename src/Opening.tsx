@@ -2,7 +2,7 @@ export default function Opening() {
   return (
     <div className="w-full h-screen flex">
       {/* Left: Coffee machine image */}
-      <div className="w-1/2 h-full relative ">
+      <div className="w-1/2 h-full relative">
         <img
           src="/pic1.png"
           alt="coffee machine background"
@@ -28,11 +28,9 @@ export default function Opening() {
             <div>We're</div>
             <div>Open !</div>
           </div>
-          <div
+          <div className="pt-24"
             style={{
-             
               width: '442px',
-              height: '712px',
               fontFamily: 'sans-serif',
               fontStyle: 'normal',
               fontWeight: 400,
